@@ -1,0 +1,56 @@
+### 📋 Flutter App Upgrade Prompt (Forced Update, Player & Animation)
+
+**Project Goal:** To implement and upgrade three major modules for an existing Flutter application: a mandatory update system, a robust cross-platform video player, and an improved loading animation flow.
+
+---
+
+### Module 1: Forced App Update System
+
+**Objective:** To check the app version from a remote JSON file and force the user to update the app if their version is outdated.
+
+**Requirements:**
+
+1.  **Local App Version:** Access the current app version (e.g., `1.0.0`) from the `pubspec.yaml` (using the `package_info_plus` package is recommended).
+2.  **Remote Version JSON:** A JSON file hosted at a specific URL (like your Dropbox link).
+    * JSON Format: `{ "latestVersion": "1.0.1", "downloadUrl": "your_apk_download_link" }`
+3.  **Checking Logic:**
+    * On app launch (in `initState` of Splash Screen or Home Page), fetch this JSON file.
+    * Compare the local version against the `latestVersion` (use the `version` package for reliable string comparison).
+4.  **Blocking Popup:**
+    * If `latestVersion > localVersion`, immediately show a **blocking popup** (`AlertDialog` or `showDialog`).
+    * This popup **must not** be bypassable. Set `barrierDismissible: false` and use `WillPopScope` to block the Android back button.
+    * The popup will feature one button: "Update Now".
+5.  **Update Action:**
+    * On clicking "Update Now", use `url_launcher` to open the `downloadUrl` from the JSON, prompting the user to download the new APK.
+
+---
+
+### Module 2: Video Player Replacement (Cross-Platform)
+
+**Objective:** To replace the current non-functional player with a robust player that can handle Google Drive direct links and works smoothly across Web, iOS, and Android.
+
+**Requirements:**
+
+1.  **Player Replacement:** Remove the existing player from all sections of the app (Web Series, Anime, Movie).
+2.  **Technology:**
+    * Use the `video_player` package for core playback logic.
+    * Use the `chewie` package on top of `video_player` to provide a complete, customizable, and YouTube-like UI (controls, progress bar, fullscreen).
+3.  **Google Drive Link Handling:**
+    * The player must be able to play Google Drive direct download links (e.g., `.../uc?export=download&id=...`).
+    * *Note: These links often redirect. Ensure the `video_player` configuration can correctly follow redirects to play the final `.mp4`/media file.*
+4.  **Cross-Platform Support (Crucial):**
+    * This new player solution must work smoothly and error-free on all three target platforms: **Android**, **iOS**, and **Flutter Web**. Both `video_player` and `chewie` support this.
+
+---
+
+### Module 3: Loading Screen & Animation Flow
+
+**Objective:** To enhance the app's loading screen by integrating the "Get Started" animation directly into the initial loading process.
+
+**Requirements:**
+
+1.  **Animation Relocation:** Move the animation that currently plays before the "Get Started" button to the initial `SplashScreen` (loading screen).
+2.  **New Flow:**
+    * The app will launch, and this animation will start playing immediately.
+    * While the animation is running, all necessary background data will be loaded (e.g., the version check, user data).
+    * Once **both** conditions are met (data is loaded AND the animation has finished), either navigate the user directly to the Home Page or fade-in the "Get Started" button.

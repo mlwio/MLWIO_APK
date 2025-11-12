@@ -1,0 +1,65 @@
+You are asked to generate a full Flutter app with the following features. Use the MongoDB database link: "mongodb+srv://coinmlwio_db_user:TAA@coin0372@mlwio-user-coin.v5u1a68.mongodb.net/?appName=MLWIO-User-Coin". 
+
+The app must include:
+
+1. Bottom Navigation:
+   - Buttons: Home | Basic/Premium | Profile
+   - Basic/Premium button shows:
+     - "Basic" if the user has not purchased premium
+     - "Premium" if the user has purchased premium
+   - Tapping Basic/Premium opens a full-screen popup
+
+2. Popup Layout:
+   - Covers from below the header to the bottom
+   - iPhone-style thin line below header
+   - Scrollable content
+   - Shows logged-in user's coin balance next to "Redeem Premium"
+
+3. Redeem Premium Section:
+   - Tapping "Redeem Premium" opens another popup with options:
+     - 1 day premium = 15 coins
+     - 3 days premium = 40 coins
+     - 7 days premium = 70 coins
+     - 15 days premium = 130 coins
+     - 30 days premium = 200 coins
+   - "Watch Ad to Earn" option:
+     - Each ad gives 5 coins
+     - Coins automatically added to logged-in user's account
+     - Update coins in MongoDB with Gmail/account info
+   - "Buy Coin" button:
+     - Tapping shows "Coming Soon"
+     - Basic users cannot buy coins
+
+4. Ad System:
+   - Basic users see ads like YouTube:
+     - Ads before videos and every 20-30 minutes
+   - Premium users do not see ads
+
+5. Premium Tracking & Expiry:
+   - Store Gmail, coin amount, premium duration, and exact expiry date in MongoDB
+   - After expiry, user automatically downgraded to Basic
+   - Real-time updates in MongoDB
+
+6. Coin & Database Integration:
+   - All coin changes (earned or spent) update MongoDB
+   - User login tied to Gmail
+   - Premium purchases, expiry, and coin balance synced
+
+7. UI/UX Notes:
+   - Smooth animation for popup from bottom to full-screen
+   - iPhone-style line below header
+   - Buttons, popups, text adapt to Basic/Premium status
+   - Coins, redeem, ads, buy options clearly visible with spacing
+
+8. App Functionality Summary:
+   - Bottom navigation: Home | Basic/Premium | Profile
+   - Popup for Basic/Premium with redeem and coin info
+   - Secondary popup for redeeming premium with multiple durations
+   - Ad system for coin earning
+   - Real-time MongoDB updates
+   - Automatic downgrade to Basic after premium expiry
+   - Premium users see ad-free experience
+   - Buy Coin shows "Coming Soon"
+   - All actions linked to user account via Gmail
+
+Generate a ready-to-use Flutter project with all above features, including MongoDB integration using the given connection string. Implement popups, coin handling, premium expiry, and ad system logic fully. Provide proper widgets, state management, and navigation for a functional Flutter app.

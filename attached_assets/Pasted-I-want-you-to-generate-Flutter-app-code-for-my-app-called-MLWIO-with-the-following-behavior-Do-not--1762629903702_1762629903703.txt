@@ -1,0 +1,47 @@
+I want you to generate Flutter app code for my app called MLWIO with the following behavior. Do not include any code in this prompt, only generate the text prompt for AI. Make sure the AI knows all requirements:
+
+1. Ad Integration:
+   - Use AdMob with the following IDs:
+     - App ID: "ca-app-pub-1106487052120776~9296916453"
+     - Rewarded Ad Unit ID: "ca-app-pub-1106487052120776/8445324625"
+   - Show **Rewarded Video Ads** in multiple places.
+
+2. Ads behavior:
+   - For **Basic users**:
+     - Every 5 minutes, a different ad can show from various games or applications, like how other apps show ads.
+     - User **cannot close the ad** until it finishes.
+     - Ads can be Rewarded Video Ads. After watching fully, user earns Coins.
+   - For **Premium users**:
+     - No ads appear at all.
+     - Premium is purchased inside the app for a certain period (days), and ads should be disabled for that duration.
+
+3. Coins and redemption:
+   - Inside the app, between **Home and Profile**, place a **Basic / Premium button**.
+   - Under Basic user, there should be a **“View Ads to Earn Coins”** button.
+   - When a user taps this button:
+     - Show a Rewarded Video Ad.
+     - When the ad finishes, add Coins to the user account.
+   - Coins can later be redeemed to purchase Premium inside the app.
+
+4. App logic:
+   - Store user type (Basic or Premium) locally or in database.
+   - Check Premium expiration, if Premium expired, start showing ads again.
+   - Rewarded Video Ads must fully play to grant coins.
+   - Users cannot skip ads to earn coins.
+
+5. UI requirements:
+   - Home screen with profile button.
+   - Basic / Premium toggle in UI.
+   - “View Ads to Earn Coins” button visible for Basic users only.
+   - Coins display somewhere in the Home or Profile screen.
+
+6. Implementation details:
+   - Flutter framework.
+   - Integrate **google_mobile_ads** package.
+   - Rewarded Ad logic must handle loading, showing, and giving reward on completion.
+   - Timer logic for automatic ad every 5 minutes for Basic users.
+   - Premium users should have ads completely disabled.
+
+7. No code in this prompt — only instructions. Make the AI generate clean Flutter code using this description. Include handling of Rewarded Ads, user coins, Premium purchase timer, Basic/Premium user logic, and buttons in UI as described.
+
+End of prompt.

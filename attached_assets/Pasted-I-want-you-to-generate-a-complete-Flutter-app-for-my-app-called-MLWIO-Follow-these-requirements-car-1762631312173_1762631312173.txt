@@ -1,0 +1,50 @@
+I want you to generate a complete Flutter app for my app called MLWIO. Follow these requirements carefully. Do not write code in this prompt; just use this as instruction for AI code generation.
+
+1. App Name: MLWIO
+2. Ad Integration:
+   - Use AdMob with the following IDs:
+     - App ID: "ca-app-pub-1106487052120776~9296916453"
+     - Rewarded Ad Unit ID: "ca-app-pub-1106487052120776/8445324625"
+   - Rewarded Video Ads should be integrated and load correctly.
+   - Rewarded Ad must fully play to give reward; user cannot skip.
+   - Test Ads should be usable for initial testing.
+
+3. User Types:
+   - Basic User:
+     - Ads appear every 5 minutes automatically from various sources (simulating game/app ads).
+     - User cannot close ad until it finishes.
+     - Watching ad gives reward: 5 Coins per ad.
+   - Premium User:
+     - No ads at all.
+     - Premium purchase is time-limited (number of days). During this time, ads are completely disabled.
+
+4. Coins & Premium:
+   - Coins are earned only when watching Rewarded Ads fully.
+   - Coins can be redeemed to purchase Premium subscription inside the app.
+   - Store user type (Basic/Premium) and Premium expiry locally or in database.
+
+5. UI:
+   - Home screen with Profile button.
+   - Between Home and Profile, show Basic / Premium toggle or buttons.
+   - For Basic users, show "View Ads to Earn Coins" button.
+   - When user taps the button, Rewarded Video Ad is shown; after finishing, add 5 Coins.
+   - Display total Coins in Home or Profile screen.
+
+6. App Logic:
+   - Timer for automatic ads every 5 minutes for Basic users.
+   - Rewarded Ads must load before showing.
+   - Premium users should never see any ads.
+   - Rewarded Ads add Coins only after fully watched.
+   - Premium purchase duration disables ads for that period.
+
+7. Flutter Implementation:
+   - Use `google_mobile_ads` package.
+   - Handle RewardedAd load, show, and onUserEarnedReward callbacks.
+   - Handle user Coins, Basic/Premium user logic, Premium expiration.
+   - Make UI simple and functional with buttons and coin display.
+
+8. Testing & Live:
+   - Allow Test Ads for testing first.
+   - After confirming functionality, replace with your Ad Unit ID for Live Ads.
+
+End of prompt.
