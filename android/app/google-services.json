@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "188372451903",
+    "project_id": "mlwio-apk",
+    "storage_bucket": "mlwio-apk.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188372451903:android:0de54aaa174d5c3f512e8a",
+        "android_client_info": {
+          "package_name": "com.example.mlwio_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188372451903-5uitc7f0ca3d7gt0n6l1dri2ac138p5i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mlwio_app",
+            "certificate_hash": "1d46eb54e64304c8826def7ec9891993602a364d"
+          }
+        },
+        {
+          "client_id": "188372451903-ubcaij44j6qpn8fno559k08rkmr5eigr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP5ZkwpT-83XhuirCsY7uoA7kc9qI0qWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188372451903-ubcaij44j6qpn8fno559k08rkmr5eigr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,71 @@
+modules = ["cpp-clang14", "nodejs-20", "web", "python-3.11"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+packages = ["flutter", "chromium"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Flutter Web App"
+
+[[workflows.workflow]]
+name = "Flutter Web App"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 serve.py"
+waitForPort = 5000
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 33857
+externalPort = 3003
+
+[[ports]]
+localPort = 35035
+externalPort = 5173
+
+[[ports]]
+localPort = 40143
+externalPort = 3001
+
+[[ports]]
+localPort = 40889
+externalPort = 3002
+
+[[ports]]
+localPort = 41387
+externalPort = 4200
+
+[[ports]]
+localPort = 43981
+externalPort = 5000
+
+[[ports]]
+localPort = 44089
+externalPort = 6800
+
+[[ports]]
+localPort = 44427
+externalPort = 3000
+
+[[ports]]
+localPort = 45505
+externalPort = 6000
